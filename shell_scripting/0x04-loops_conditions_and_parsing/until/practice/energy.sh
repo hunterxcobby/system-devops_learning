@@ -9,6 +9,7 @@ do
     if [ $energy -eq 500 ]
     then
         echo "I need a bit of rest"
+        sleep 2
     fi
 
     ((energy--))
