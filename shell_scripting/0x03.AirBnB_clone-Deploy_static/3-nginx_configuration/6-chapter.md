@@ -1,0 +1,7 @@
+A FastCGI (Fast Common Gateway Interface) server is a type of web server interface that facilitates communication between a web server, like Nginx or Apache, and external applications or scripts, such as those written in PHP, Python, or Ruby. 
+
+Unlike traditional CGI (Common Gateway Interface), which starts a new process for each request, FastCGI uses persistent processes to handle multiple requests over time, improving performance and reducing overhead. This persistent process model allows FastCGI servers to efficiently manage resources and handle a high volume of requests without the overhead of process creation and destruction for each request.
+
+FastCGI servers typically run as standalone processes or as part of a web server's infrastructure, listening for incoming requests and processing them by executing the associated application or script. They communicate with the web server via a standardized protocol, enabling seamless integration and efficient handling of dynamic content generation.
+
+In the context of Nginx or Apache, configuring a FastCGI server allows these web servers to delegate the execution of dynamic web applications to external processes, providing a flexible and scalable architecture for serving dynamic content on the web.
