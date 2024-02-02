@@ -1,0 +1,3 @@
+Think of SSL as a crucial piece of the puzzle for businesses that handle credit card information online, like a required safety measure to protect sensitive data. To legally accept credit card payments on your website, you must adhere to specific standards set by the Payment Card Industry (PCI).
+
+One of these requirements is implementing SSL correctly. By encrypting data during transmission, SSL ensures that credit card details and other sensitive information are securely transferred between your customers' browsers and your website's servers. This encryption is a fundamental step towards meeting the stringent security standards mandated by PCI compliance.
