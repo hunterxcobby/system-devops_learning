@@ -2,22 +2,31 @@
 import requests
 import sys
 
-def check_arg(args):
-    if len(args) != 2:
-        print("Please made sure to id and nothing else")
+def get_employer_details(employee_id):
+    url_path = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
+    response = requests.get(url_path)
+
+    if response.status_code == 200:
+        employee_data = response.json()
+        print(employee_data)
+        employee_name = employee_data[0]["id"]
+        total_tasks = len(employee_data)
+        completed_tasks = sum(1 for task in employee_data if task["completed"])
+
+        print(f"Employee {employee_name} is done with tasks ({completed_tasks}/{total_tasks}):")
+        for task in employee_data:
+            if task["completed"]:
+                print(f"\t{task['title']}")
     else:
-        employee_id = sys.argv[1]
-        return employee_id
-    
-id = check_arg(args = sys.argv)
+        print(f"Failed to fetch data. Status code: {response.status_code}")
 
-def getEmployersDetails(id):
+def main():
+    if len(sys.argv) != 2:
+        print("Please provide an employee ID as an argument.")
+        sys.exit(1)
 
-    url_path = requests.get(f"https://jsonplaceholder.typicode.com/todos/{id}")
-    print(url_path.status_code)
+    employee_id = int(sys.argv[1])
+    get_employer_details(employee_id)
 
-    employee = url_path.json()
-    print(employee)
-    print(employee["title"])
-
-getEmployersDetails(id)
+if __name__ == "__main__":
+    main()
