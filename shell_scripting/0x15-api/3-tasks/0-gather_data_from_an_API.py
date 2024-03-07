@@ -16,6 +16,8 @@ def getEmployersDetails(id):
     url_path = requests.get(f"https://jsonplaceholder.typicode.com/todos/{id}")
     print(url_path.status_code)
 
-    print(url_path.json())
+    employee = url_path.json()
+    print(employee)
+    print(employee["title"])
 
 getEmployersDetails(id)
