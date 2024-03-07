@@ -12,9 +12,10 @@ def check_arg(args):
 id = check_arg(args = sys.argv)
 
 def getEmployersDetails(id):
-    
-    url_path = requests.get("https://jsonplaceholder.typicode.com/todos/1")
+
+    url_path = requests.get(f"https://jsonplaceholder.typicode.com/todos/{id}")
     print(url_path.status_code)
-    print(id)
+
+    print(url_path.json())
 
 getEmployersDetails(id)
